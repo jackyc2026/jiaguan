@@ -1,0 +1,1647 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>夹关古镇 | 川西秘境的千年时光</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2c5f4a;
+            --primary-dark: #1a3d2e;
+            --accent: #c9a962;
+            --accent-light: #e8d9b5;
+            --bg-light: #f8f6f1;
+            --bg-warm: #f5f0e8;
+            --text-dark: #2d2d2d;
+            --text-light: #6b6b6b;
+            --white: #ffffff;
+            --shadow: 0 10px 40px rgba(0,0,0,0.08);
+            --shadow-hover: 0 20px 60px rgba(0,0,0,0.12);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+            line-height: 1.8;
+            color: var(--text-dark);
+            background: var(--bg-light);
+            overflow-x: hidden;
+        }
+
+        .serif {
+            font-family: 'Noto Serif SC', serif;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1.2rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.4s ease;
+            background: transparent;
+        }
+
+        nav.scrolled {
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(20px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+            padding: 0.8rem 5%;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--white);
+            text-decoration: none;
+            letter-spacing: 2px;
+            transition: color 0.3s;
+        }
+
+        nav.scrolled .logo {
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: rgba(255,255,255,0.9);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        nav.scrolled .nav-links a {
+            color: var(--text-dark);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(26,61,46,0.75) 0%, rgba(44,95,74,0.75) 50%, rgba(61,122,95,0.75) 100%), url('generated-images/夹关古镇_白沫江_清晨_雾气_吊脚楼_真实照片_2026-03-30T05-24-39.png');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.03)"/><circle cx="75" cy="75" r="1" fill="rgba(255,255,255,0.03)"/><circle cx="50" cy="10" r="0.5" fill="rgba(255,255,255,0.02)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.5;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            color: var(--white);
+            max-width: 900px;
+            padding: 0 2rem;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 50px;
+            font-size: 0.85rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 8vw, 5.5rem);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+
+        .hero h1 span {
+            display: block;
+            font-size: 0.4em;
+            font-weight: 300;
+            letter-spacing: 8px;
+            margin-bottom: 1rem;
+            color: var(--accent-light);
+        }
+
+        .hero-desc {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 3rem;
+            animation: fadeInUp 1s ease 0.4s both;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            animation: fadeInUp 1s ease 0.6s both;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            opacity: 0.7;
+            letter-spacing: 1px;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 3rem;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+        }
+
+        .scroll-indicator span {
+            display: block;
+            width: 2px;
+            height: 40px;
+            background: linear-gradient(to bottom, var(--white), transparent);
+            margin: 0 auto;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-10px); }
+            60% { transform: translateX(-50%) translateY(-5px); }
+        }
+
+        /* Section Styles */
+        section {
+            padding: 8rem 5%;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 5rem;
+        }
+
+        .section-tag {
+            display: inline-block;
+            font-size: 0.8rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+        }
+
+        .section-desc {
+            color: var(--text-light);
+            font-size: 1.05rem;
+        }
+
+        /* About Section */
+        .about {
+            background: var(--white);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .about-visual {
+            position: relative;
+        }
+
+        .about-image {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, #1a3d2e 0%, #2c5f4a 50%, #3d7a5f 100%);
+        }
+
+        .hero-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.6;
+        }
+
+        .scenery-bg img,
+        .culture-image img,
+        .stay-image img,
+        .season-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .about-image-card {
+            position: absolute;
+            bottom: -30px;
+            right: -30px;
+            background: var(--primary);
+            color: var(--white);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: var(--shadow-hover);
+            max-width: 220px;
+        }
+
+        .about-image-card h4 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .about-image-card p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .about-content h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+        }
+
+        .about-content p {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-list {
+            list-style: none;
+            margin-top: 2rem;
+        }
+
+        .feature-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .feature-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--accent-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 1.2rem;
+        }
+
+        .feature-text h5 {
+            font-size: 1rem;
+            margin-bottom: 0.3rem;
+            color: var(--text-dark);
+        }
+
+        .feature-text p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin: 0;
+        }
+
+        /* Culture Section */
+        .culture {
+            background: var(--bg-warm);
+        }
+
+        .culture-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .culture-card {
+            background: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.4s ease;
+        }
+
+        .culture-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .culture-image {
+            height: 220px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: var(--accent);
+        }
+
+        .culture-content {
+            padding: 2rem;
+        }
+
+        .culture-content h4 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .culture-content p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Scenery Section */
+        .scenery {
+            background: var(--white);
+        }
+
+        .scenery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .scenery-card {
+            position: relative;
+            height: 350px;
+            border-radius: 12px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .scenery-card:first-child {
+            grid-column: span 2;
+            grid-row: span 2;
+        }
+
+        .scenery-bg {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, #4a7c6a 0%, #2c5f4a 100%);
+            transition: transform 0.5s ease;
+        }
+
+        .scenery-card:hover .scenery-bg {
+            transform: scale(1.1);
+        }
+
+        .scenery-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 2rem;
+            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+            color: var(--white);
+        }
+
+        .scenery-content h4 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .scenery-content p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Food Section */
+        .food {
+            background: var(--bg-warm);
+        }
+
+        .food-showcase {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            align-items: center;
+        }
+
+        .food-gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .food-item {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+        }
+
+        .food-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .food-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .food-item h5 {
+            font-size: 1rem;
+            color: var(--text-dark);
+            margin-bottom: 0.3rem;
+        }
+
+        .food-item p {
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        .food-intro h3 {
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+        }
+
+        .food-intro > p {
+            color: var(--text-light);
+            margin-bottom: 2rem;
+        }
+
+        .food-highlight {
+            background: var(--primary);
+            color: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+        }
+
+        .food-highlight h4 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+
+        .food-highlight ul {
+            list-style: none;
+        }
+
+        .food-highlight li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .food-highlight li:last-child {
+            border-bottom: none;
+        }
+
+        /* Stay Section */
+        .stay {
+            background: var(--white);
+        }
+
+        .stay-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .stay-card {
+            background: var(--bg-warm);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.4s ease;
+        }
+
+        .stay-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .stay-image {
+            height: 250px;
+            background: linear-gradient(135deg, #6b8e78 0%, #4a6b5a 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            position: relative;
+        }
+
+        .stay-tag {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--accent);
+            color: var(--white);
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+
+        .stay-content {
+            padding: 1.5rem;
+        }
+
+        .stay-content h4 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .stay-location {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .stay-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .stay-feature {
+            font-size: 0.75rem;
+            padding: 0.3rem 0.8rem;
+            background: var(--white);
+            border-radius: 20px;
+            color: var(--text-light);
+        }
+
+        /* Traffic Section */
+        .traffic {
+            background: var(--bg-warm);
+        }
+
+        .traffic-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            align-items: center;
+        }
+
+        .traffic-info h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+        }
+
+        .traffic-list {
+            list-style: none;
+        }
+
+        .traffic-list li {
+            display: flex;
+            gap: 1.5rem;
+            padding: 1.5rem 0;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .traffic-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 1.3rem;
+        }
+
+        .traffic-text h5 {
+            font-size: 1.1rem;
+            margin-bottom: 0.3rem;
+            color: var(--text-dark);
+        }
+
+        .traffic-text p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .traffic-map {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 3rem;
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+
+        .traffic-map h4 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .traffic-map p {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+        }
+
+        .route-info {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .route-item {
+            text-align: center;
+        }
+
+        .route-item .time {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .route-item .label {
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        /* Guide Section */
+        .guide {
+            background: var(--primary);
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .guide::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="1" fill="rgba(255,255,255,0.05)"/></svg>');
+            background-size: 30px 30px;
+        }
+
+        .guide .section-tag,
+        .guide .section-title,
+        .guide .section-desc {
+            color: var(--white);
+        }
+
+        .guide .section-desc {
+            opacity: 0.8;
+        }
+
+        .timeline {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: rgba(255,255,255,0.2);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            display: flex;
+            justify-content: flex-end;
+            padding-right: calc(50% + 40px);
+            position: relative;
+            margin-bottom: 3rem;
+        }
+
+        .timeline-item:nth-child(even) {
+            justify-content: flex-start;
+            padding-right: 0;
+            padding-left: calc(50% + 40px);
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            background: var(--accent);
+            border-radius: 50%;
+            transform: translateX(-50%);
+            border: 3px solid var(--primary);
+        }
+
+        .timeline-content {
+            background: rgba(255,255,255,0.1);
+            padding: 1.5rem 2rem;
+            border-radius: 12px;
+            max-width: 350px;
+            backdrop-filter: blur(10px);
+        }
+
+        .timeline-content h5 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--accent);
+        }
+
+        .timeline-content p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        /* Seasons Section */
+        .seasons {
+            background: var(--white);
+        }
+
+        .seasons-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .season-card {
+            position: relative;
+            height: 400px;
+            border-radius: 12px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .season-bg {
+            position: absolute;
+            inset: 0;
+            transition: transform 0.5s ease;
+        }
+
+        .season-card:hover .season-bg {
+            transform: scale(1.1);
+        }
+
+        .season-card:nth-child(1) .season-bg { background: linear-gradient(135deg, #7eb5a6 0%, #4a9b82 100%); position: relative; }
+        .season-card:nth-child(1) .season-bg::before { content: '🌸'; position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-size: 8rem; opacity: 0.15; }
+        
+        .season-card:nth-child(2) .season-bg { background: linear-gradient(135deg, #6b8e78 0%, #4a6b5a 100%); position: relative; }
+        .season-card:nth-child(2) .season-bg::before { content: '☀️'; position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-size: 8rem; opacity: 0.15; }
+        
+        .season-card:nth-child(3) .season-bg { background: linear-gradient(135deg, #d4a574 0%, #b8863d 100%); position: relative; }
+        .season-card:nth-child(3) .season-bg::before { content: '🍂'; position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-size: 8rem; opacity: 0.15; }
+        
+        .season-card:nth-child(4) .season-bg { background: linear-gradient(135deg, #8faab5 0%, #5a7a85 100%); position: relative; }
+        .season-card:nth-child(4) .season-bg::before { content: '❄️'; position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-size: 8rem; opacity: 0.15; }
+
+        .season-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 2rem;
+            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+            color: var(--white);
+        }
+
+        .season-content h4 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .season-content p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        /* CTA Section */
+        .cta {
+            background: var(--bg-warm);
+            text-align: center;
+            padding: 6rem 5%;
+        }
+
+        .cta-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+        }
+
+        .cta p {
+            color: var(--text-light);
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 3rem;
+            background: var(--primary);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(44, 95, 74, 0.3);
+        }
+
+        .cta-button:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(44, 95, 74, 0.4);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-dark);
+            color: var(--white);
+            padding: 4rem 5% 2rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            margin-bottom: 3rem;
+        }
+
+        .footer-brand h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+
+        .footer-brand p {
+            font-size: 0.9rem;
+            opacity: 0.7;
+            line-height: 1.8;
+        }
+
+        .footer-links h5 {
+            font-size: 1rem;
+            margin-bottom: 1.2rem;
+            color: var(--white);
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.6);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.85rem;
+            opacity: 0.6;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            display: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .about-grid,
+            .food-showcase,
+            .traffic-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .culture-grid,
+            .stay-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .scenery-grid,
+            .seasons-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .scenery-card:first-child {
+                grid-column: span 2;
+                grid-row: span 1;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+
+            .hero-stats {
+                flex-direction: column;
+                gap: 2rem;
+            }
+
+            .culture-grid,
+            .stay-grid,
+            .scenery-grid,
+            .seasons-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .scenery-card:first-child {
+                grid-column: span 1;
+            }
+
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-item,
+            .timeline-item:nth-child(even) {
+                padding-left: 60px;
+                padding-right: 0;
+                justify-content: flex-start;
+            }
+
+            .timeline-dot {
+                left: 20px;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <a href="#" class="logo">夹关古镇</a>
+        <ul class="nav-links">
+            <li><a href="#about">古镇概况</a></li>
+            <li><a href="#culture">历史文化</a></li>
+            <li><a href="#scenery">景点风光</a></li>
+            <li><a href="#food">美食推荐</a></li>
+            <li><a href="#stay">住宿推荐</a></li>
+            <li><a href="#guide">旅游攻略</a></li>
+        </ul>
+        <div class="mobile-menu">☰</div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <div class="hero-badge">川西秘境 · 千年驿站</div>
+            <h1 class="serif">
+                <span>寻味 · 茶马古道</span>
+                夹关古镇
+            </h1>
+            <p class="hero-desc">
+                一江三桥吊脚楼，茶马古道慢生活。<br>
+                在这里，时间仿佛放慢了脚步，带你领略真正的川西水乡
+            </p>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <div class="stat-number">2300+</div>
+                    <div class="stat-label">年历史底蕴</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">16000</div>
+                    <div class="stat-label">亩生态茶园</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">3</div>
+                    <div class="stat-label">座清代古桥</div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span></span>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="about-grid">
+            <div class="about-visual">
+                <div class="about-image">
+                    <img src="generated-images/夹关古镇_白沫江_清晨_雾气_吊脚楼_真实照片_2026-03-30T05-24-39.png" alt="夹关古镇全景" style="width:100%;height:100%;object-fit:cover;border-radius:8px;">
+                </div>
+                <div class="about-image-card">
+                    <h4>川西小江南</h4>
+                    <p>白沫江穿镇而过，吊脚楼沿江而立</p>
+                </div>
+            </div>
+            <div class="about-content">
+                <div class="section-tag">About Us</div>
+                <h3 class="serif">千年驿站 · 茶马古道上的活态古镇</h3>
+                <p>
+                    夹关古镇位于四川省成都市邛崃市西南部，距今已有2300多年历史。古称"夹门关"、"葭萌关"，因两山夹峙如门而得名。这里是茶马古道和南方丝绸之路的重要驿站，与平乐、固驿并称为"临邛三大古镇"。
+                </p>
+                <p>
+                    古镇依白沫江而建，形成了"两街并立、一江中流、三桥横韵"的独特格局。没有过度开发的商业气息，这里更多保留的是原汁原味的生活气息和深厚的历史文化底蕴。
+                </p>
+                <ul class="feature-list">
+                    <li>
+                        <div class="feature-icon">🏛️</div>
+                        <div class="feature-text">
+                            <h5>三座清代古桥</h5>
+                            <p>万福桥、永寿桥、庆元桥横跨白沫江</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="feature-icon">🍵</div>
+                        <div class="feature-text">
+                            <h5>万亩茶山</h5>
+                            <p>邛崃黑茶之源，16000亩生态茶园</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="feature-icon">🛤️</div>
+                        <div class="feature-text">
+                            <h5>茶马古道</h5>
+                            <p>秦汉驿道遗迹至今依稀可辨</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Culture Section -->
+    <section class="culture" id="culture">
+        <div class="section-header">
+            <div class="section-tag">Culture</div>
+            <h2 class="section-title serif">历史文化</h2>
+            <p class="section-desc">2300年的历史沉淀，孕育了独特的茶马古道文化和感恩情怀</p>
+        </div>
+            <div class="culture-grid">
+            <div class="culture-card">
+                <div class="culture-image" style="position: relative; overflow: hidden;">
+                    <img src="generated-images/古镇石板路老街_2026-03-30T05-08-50.png" alt="茶马古道" style="width:100%;height:100%;object-fit:cover;">
+                </div>
+                <div class="culture-content">
+                    <h4>茶马古道</h4>
+                    <p>夹关是茶马古道的重要节点，茶叶、药材、盐货在此集散，南岸街码头昔日船筏云集，骡马络绎</p>
+                </div>
+            </div>
+            <div class="culture-card">
+                <div class="culture-image" style="position: relative; overflow: hidden;">
+                    <img src="generated-images/古镇石拱桥_2026-03-30T05-11-07.png" alt="三桥古韵" style="width:100%;height:100%;object-fit:cover;">
+                </div>
+                <div class="culture-content">
+                    <h4>三桥古韵</h4>
+                    <p>万福桥仿赵州桥设计，永寿桥带"羔羊跪乳"石雕，庆元桥寓意"开创通商之始元"，每座桥都有动人故事</p>
+                </div>
+            </div>
+            <div class="culture-card">
+                <div class="culture-image" style="position: relative; overflow: hidden;">
+                    <img src="generated-images/四川古镇_2026-03-30T05-10-06.png" alt="古镇全景" style="width:100%;height:100%;object-fit:cover;">
+                </div>
+                <div class="culture-content">
+                    <h4>古镇全景</h4>
+                    <p>两山夹峙如门，一江中流，千年时光在此静静流淌</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scenery Section -->
+    <section class="scenery" id="scenery">
+        <div class="section-header">
+            <div class="section-tag">Scenery</div>
+            <h2 class="section-title serif">景点风光</h2>
+            <p class="section-desc">一步一景，品味川西水乡的独特韵味</p>
+        </div>
+        <div class="scenery-grid">
+            <div class="scenery-card">
+                <div class="scenery-bg">
+                    <img src="generated-images/四川夹关古镇古桥_永寿桥或庆元桥_清代石拱桥横跨白沫江_桥身_2026-03-30T05-00-28.png" alt="夹关古镇古桥" style="width:100%;height:100%;object-fit:cover;">
+                </div>
+                <div class="scenery-content">
+                    <h4>白沫江 · 三桥古韵</h4>
+                    <p>三座清代石桥横跨江上，清晨薄雾缭绕，渔人泛舟，宛若水墨画境</p>
+                </div>
+            </div>
+            <div class="scenery-card">
+                <div class="scenery-bg">
+                    <img src="generated-images/古镇_清晨_雾气_江面_吊脚楼_2026-03-30T06-12-18.png" alt="古镇石拱桥" style="width:100%;height:100%;object-fit:cover;">
+                </div>
+                <div class="scenery-content">
+                    <h4>石拱桥影</h4>
+                    <p>清晨薄雾中的古桥倒映在清澈的江面上，岁月静好</p>
+                </div>
+            </div>
+            <div class="scenery-card">
+                <div class="scenery-bg">
+                    <img src="generated-images/四川邛崃夹关古镇茶园_万亩茶山连绵起伏_茶农在采茶_阳光透过_2026-03-30T04-59-50.png" alt="夹关古镇茶园" style="width:100%;height:100%;object-fit:cover;">
+                </div>
+                <div class="scenery-content">
+                    <h4>万亩茶山</h4>
+                    <p>古镇南岸16000亩茶园，可体验采茶、漫步茶香小道</p>
+                </div>
+            </div>
+            <div class="scenery-card">
+                <div class="scenery-bg">
+                    <img src="generated-images/古镇_清晨_雾气_江面_吊脚楼_摄影_2026-03-30T05-57-35.png" alt="古镇老街" style="width:100%;height:100%;object-fit:cover;">
+                </div>
+                <div class="scenery-content">
+                    <h4>古镇老街</h4>
+                    <p>清晨薄雾中的古镇，青石板路见证千年历史</p>
+                </div>
+            </div>
+            <div class="scenery-card">
+                <div class="scenery-bg">
+                    <img src="generated-images/古镇_竹林_幽静_小路_2026-03-30T05-40-32.png" alt="茶马古道遗址" style="width:100%;height:100%;object-fit:cover;">
+                </div>
+                <div class="scenery-content">
+                    <h4>竹林秘境</h4>
+                    <p>古镇周边竹林秘境，呼吸清新空气，享受静谧时光</p>
+                </div>
+            </div>
+            <div class="scenery-card">
+                <div class="scenery-bg">
+                    <img src="generated-images/川西古镇吊脚楼建筑_2026-03-30T05-08-04.png" alt="古镇吊脚楼" style="width:100%;height:100%;object-fit:cover;">
+                </div>
+                <div class="scenery-content">
+                    <h4>吊脚楼群</h4>
+                    <p>依白沫江而建的川西传统吊脚楼，水墨画般的古镇风貌</p>
+                </div>
+            </div>
+            <div class="scenery-card">
+                <div class="scenery-bg">
+                    <img src="generated-images/古建筑_2026-03-30T05-17-15.png" alt="古镇建筑" style="width:100%;height:100%;object-fit:cover;">
+                </div>
+                <div class="scenery-content">
+                    <h4>传统民居</h4>
+                    <p>保存完好的川西传统民居，青砖灰瓦，古朴典雅</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Food Section -->
+    <section class="food" id="food">
+            <div class="food-showcase">
+            <div class="food-gallery" style="grid-template-columns: 1fr;">
+                <div class="food-item" style="display: flex; align-items: center; gap: 1.5rem; text-align: left;">
+                    <img src="generated-images/四川古镇传统美食_肉汤圆_腌熏肉_嫩豆花等马帮菜摆放在木质餐_2026-03-30T05-00-36.png" alt="夹关美食" style="width: 280px; height: 200px; object-fit: cover; border-radius: 8px;">
+                    <div>
+                        <h5 style="font-size: 1.3rem; margin-bottom: 0.5rem;">夹关四绝 · 马帮美食</h5>
+                        <p style="margin-bottom: 0.8rem;">2000多年历史孕育了独特的马帮菜系，以味美价廉著称</p>
+                        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                            <span style="background: var(--accent-light); padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.85rem;">🥟 肉汤圆</span>
+                            <span style="background: var(--accent-light); padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.85rem;">🥓 腌熏肉</span>
+                            <span style="background: var(--accent-light); padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.85rem;">🍗 过江鸡</span>
+                            <span style="background: var(--accent-light); padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.85rem;">🫛 嫩豆花</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="food-intro">
+                <div class="section-tag">Gourmet</div>
+                <h3 class="serif">马帮美食 · 人间烟火</h3>
+                <p>
+                    夹关因茶马古道文化孕育了独具特色的马帮菜，以味美价廉著称。2000多年的历史，让这里拥有了正宗的川西马帮菜系。赶集日（农历三、六、九）更能品尝到地道的夹关四绝。
+                </p>
+                <div class="food-highlight">
+                    <h4>夹关四绝</h4>
+                    <ul>
+                        <li>🥟 <strong>肉汤圆</strong> — 赶集日限定，软糯外皮包裹咸香肉馅</li>
+                        <li>🥓 <strong>腌熏肉</strong> — 传统工艺，肥瘦相间，烟熏风味</li>
+                        <li>🍗 <strong>过江鸡</strong> — 鲜嫩鸡肉，独特烹饪手法</li>
+                        <li>🫛 <strong>嫩豆花</strong> — 豆香浓郁，秘制辣酱调味</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stay Section -->
+    <section class="stay" id="stay">
+        <div class="section-header">
+            <div class="section-tag">Accommodation</div>
+            <h2 class="section-title serif">住宿推荐</h2>
+            <p class="section-desc">住进风景里，枕茶香入眠</p>
+        </div>
+            <div class="stay-grid">
+            <div class="stay-card">
+                <div class="stay-image" style="position: relative; overflow: hidden;">
+                    <img src="generated-images/古镇_夜晚_灯光_河流_吊脚楼_2026-03-30T06-02-46.png" alt="民宿" style="width:100%;height:100%;object-fit:cover;">
+                    <span class="stay-tag">精品民宿</span>
+                </div>
+                <div class="stay-content">
+                    <h4>桐去夹关里私汤度假民宿</h4>
+                    <div class="stay-location">📍 夹关镇古蜀皇系茶文化生态体验园</div>
+                    <p style="color: var(--text-light); font-size: 0.9rem; margin-bottom: 1rem;">
+                        坐落于千亩茶田之中，川西中式院落风格，部分客房拥有全景私汤
+                    </p>
+                    <div class="stay-features">
+                        <span class="stay-feature">私汤</span>
+                        <span class="stay-feature">茶室</span>
+                        <span class="stay-feature">游泳池</span>
+                        <span class="stay-feature">健身房</span>
+                    </div>
+                </div>
+            </div>
+            <div class="stay-card">
+                <div class="stay-image" style="position: relative; overflow: hidden;">
+                    <img src="generated-images/古镇_竹林_幽静_小路_2026-03-30T05-40-32.png" alt="山景民宿" style="width:100%;height:100%;object-fit:cover;">
+                    <span class="stay-tag">山景民宿</span>
+                </div>
+                <div class="stay-content">
+                    <h4>云顶山庄民宿客栈</h4>
+                    <div class="stay-location">📍 夹关镇紫荆村</div>
+                    <p style="color: var(--text-light); font-size: 0.9rem; margin-bottom: 1rem;">
+                        设施完善、环境优雅、卫生一流、服务上乘，温馨如家的山景民宿
+                    </p>
+                    <div class="stay-features">
+                        <span class="stay-feature">山景</span>
+                        <span class="stay-feature">农家乐</span>
+                        <span class="stay-feature">采摘</span>
+                    </div>
+                </div>
+            </div>
+            <div class="stay-card">
+                <div class="stay-image" style="position: relative; overflow: hidden;">
+                    <img src="generated-images/古镇_夜晚_灯火_通明_河流_2026-03-30T06-11-21.png" alt="古镇客栈" style="width:100%;height:100%;object-fit:cover;">
+                    <span class="stay-tag">古镇客栈</span>
+                </div>
+                <div class="stay-content">
+                    <h4>临江客栈</h4>
+                    <div class="stay-location">📍 夹关古镇内</div>
+                    <p style="color: var(--text-light); font-size: 0.9rem; margin-bottom: 1rem;">
+                        位于古镇核心区，临江而居，听水声入睡，体验原汁原味的古镇生活
+                    </p>
+                    <div class="stay-features">
+                        <span class="stay-feature">临江</span>
+                        <span class="stay-feature">古镇</span>
+                        <span class="stay-feature">性价比</span>
+                    </div>
+                </div>
+            </div>
+        </div></parameter>
+    <parameter name="explanation">更新住宿推荐区的图片为更真实的古镇夜景
+    </section>
+
+    <!-- Traffic Section -->
+    <section class="traffic" id="traffic">
+        <div class="section-header">
+            <div class="section-tag">Traffic</div>
+            <h2 class="section-title serif">交通指南</h2>
+            <p class="section-desc">成都出发仅1.5小时，轻松抵达川西秘境</p>
+        </div>
+        <div class="traffic-content">
+            <div class="traffic-info">
+                <ul class="traffic-list">
+                    <li>
+                        <div class="traffic-icon">🚗</div>
+                        <div class="traffic-text">
+                            <h5>自驾路线</h5>
+                            <p>成都 → 成温邛高速 → 邛崃 → S8邛名高速/国道 → 夹关镇<br>全程约1.5小时，过路费约55元</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="traffic-icon">🚄</div>
+                        <div class="traffic-text">
+                            <h5>高铁出行</h5>
+                            <p>成都西站/成都南站 → 邛崃站（票价25-35元）<br>转乘304路公交或小巴士（9元）直达夹关镇</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="traffic-icon">🚌</div>
+                        <div class="traffic-text">
+                            <h5>客运大巴</h5>
+                            <p>成都茶店子客运站/新南门车站 → 邛崃客运中心<br>转乘乡村班车前往夹关镇</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="traffic-map">
+                <h4>🚗 成都 → 夹关古镇</h4>
+                <p>距离成都市区约120公里</p>
+                <div class="route-info">
+                    <div class="route-item">
+                        <div class="time">1.5h</div>
+                        <div class="label">自驾时长</div>
+                    </div>
+                    <div class="route-item">
+                        <div class="time">55元</div>
+                        <div class="label">高速过路费</div>
+                    </div>
+                    <div class="route-item">
+                        <div class="time">免费</div>
+                        <div class="label">古镇停车</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guide Section -->
+    <section class="guide" id="guide">
+        <div class="section-header">
+            <div class="section-tag">Travel Guide</div>
+            <h2 class="section-title serif">游玩攻略</h2>
+            <p class="section-desc">合理规划时间，充分体验古镇魅力</p>
+        </div>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h5>上午 · 漫步古镇</h5>
+                    <p>从成都出发抵达夹关，游览三座古桥，走走老街，感受古镇的宁静古朴</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h5>中午 · 品尝马帮菜</h5>
+                    <p>在古镇老街品尝夹关四绝：肉汤圆、腌熏肉、过江鸡、嫩豆花</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h5>下午 · 茶山漫步</h5>
+                    <p>前往南岸万亩茶园，体验采茶乐趣，或漫步竹林秘境，呼吸清新空气</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h5>傍晚 · 江边休闲</h5>
+                    <p>在白沫江边品盖碗茶，看日落，享受慢时光，或住一晚民宿，枕水入眠</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- Seasons Section -->
+    <section class="seasons">
+        <div class="section-header">
+            <div class="section-tag">Seasons</div>
+            <h2 class="section-title serif">四季皆宜</h2>
+            <p class="section-desc">每个季节都有独特的风景，等待你来发现</p>
+        </div>
+        <div class="seasons-grid">
+            <div class="season-card">
+                <div class="season-bg">
+                    <img src="generated-images/古镇_清晨_太阳_升起_雾气_2026-03-30T05-59-33.png" alt="春天" style="width:100%;height:100%;object-fit:cover;">
+                </div>
+                <div class="season-content">
+                    <h4>春 · 烟雨江南</h4>
+                    <p>白沫江上晨雾缭绕，万亩茶山绿意盎然，油菜花金黄遍野</p>
+                </div>
+            </div>
+            <div class="season-card">
+                <div class="season-bg">
+                    <img src="generated-images/古镇_夜晚_灯火_通明_河流_2026-03-30T06-11-21.png" alt="夏天" style="width:100%;height:100%;object-fit:cover;">
+                </div>
+                <div class="season-content">
+                    <h4>夏 · 碧色倾城</h4>
+                    <p>川版"小丽江"，竹筏戏水，萤火虫星空，避暑胜地</p>
+                </div>
+            </div>
+            <div class="season-card">
+                <div class="season-bg">
+                    <img src="generated-images/古镇_秋天_金黄_稻田_2026-03-30T05-37-32.png" alt="秋天" style="width:100%;height:100%;object-fit:cover;">
+                </div>
+                <div class="season-content">
+                    <h4>秋 · 鎏金岁月</h4>
+                    <p>古银杏金黄，稻田丰收，温暖的胶片质感</p>
+                </div>
+            </div>
+            <div class="season-card">
+                <div class="season-bg">
+                    <img src="generated-images/古镇_夜晚_灯光_河流_吊脚楼_2026-03-30T06-02-46.png" alt="冬天" style="width:100%;height:100%;object-fit:cover;">
+                </div>
+                <div class="season-content">
+                    <h4>冬 · 静谧时光</h4>
+                    <p>人少景美，温暖的羊肉汤，宁静的古镇本真模样</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="cta-content">
+            <h2 class="serif">出发吧，去夹关</h2>
+            <p>这是一座被低估的千年古镇，没有商业化的喧嚣，只有最纯粹的烟火气和历史文化底蕴</p>
+            <a href="#" class="cta-button">开启你的夹关之旅</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>夹关古镇</h3>
+                <p>川西秘境，千年驿站。茶马古道上的活态古镇，邛崃三大古镇之一。这里有2300年的历史，有原生态的水乡风貌，有独特的马帮美食，等待你来探索。</p>
+            </div>
+            <div class="footer-links">
+                <h5>快速导航</h5>
+                <ul>
+                    <li><a href="#about">古镇概况</a></li>
+                    <li><a href="#culture">历史文化</a></li>
+                    <li><a href="#scenery">景点风光</a></li>
+                    <li><a href="#food">美食推荐</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h5>实用信息</h5>
+                <ul>
+                    <li><a href="#stay">住宿推荐</a></li>
+                    <li><a href="#traffic">交通指南</a></li>
+                    <li><a href="#guide">游玩攻略</a></li>
+                    <li><a href="#seasons">四季景色</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h5>周边景区</h5>
+                <ul>
+                    <li><a href="#">天台山景区</a></li>
+                    <li><a href="#">平乐古镇</a></li>
+                    <li><a href="#">芦山</a></li>
+                    <li><a href="#">名山</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 夹关古镇宣传网站 | 川西旅游目的地</p>
+        </div>
+    </footer>
+
+    <script>
+        // Navigation scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Apply animation to cards
+        document.querySelectorAll('.culture-card, .scenery-card, .stay-card, .food-item, .season-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'all 0.6s ease';
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
